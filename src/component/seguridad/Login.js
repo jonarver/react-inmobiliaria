@@ -5,7 +5,7 @@ import { compose } from 'recompose';
 import { consumerFirebase } from '../../server';
 import { StateContext } from '../../session/Store';
 import { iniciarSesion } from '../../session/action/Sessionaction'
-//import { openMensajePantalla } from "../../session/action/SnackbarActions";
+import { openMensajePantalla } from "../../session/action/SnackbarActions";
 
 const style ={
     paper :{
@@ -63,10 +63,10 @@ class Login extends Component {
         if (callback.state){
             this.props.history.push('/');
         }else{
-            // openMensajePantalla(dispatch,{
-            //     open : true,
-            //     mensaje : callback.mensaje.message
-            // })
+            openMensajePantalla(dispatch,{
+                open : true,
+                mensaje : callback.mensaje.message
+            })
         }
 
 

@@ -4,7 +4,7 @@ import { Snackbar } from "@material-ui/core";
 import "./App.css";
 import ListProperty from "./component/view/Listproperty";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import AppNavbar from "./component/layout/AppNavBar";
+import AppNavbar from "./component/layout/AppNavbar";
 import MuithemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import theme from "./theme/theme";
 import RegisterUser from "./component/seguridad/RegisterUser";
