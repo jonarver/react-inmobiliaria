@@ -10,13 +10,16 @@ export const iniciarSesion = (dispatch, firebase, email, password) => {
           .doc(auth.user.uid)
           .get()
           .then((doc) => {
+            console.log("INICIAR_SESION_doc")
+            console.log(doc.data())
+            console.log(auth.user.uid)
             const userDB = doc.data();
             dispatch({
               type: "INICIAR_SESION",
-              session: userDB,
-              autenticado: true,
+              sesion: userDB,
+              autenticado: true
             });
-            resolve({ state: true });
+            resolve({ status: true });
           });
       })
       .catch((error) => {

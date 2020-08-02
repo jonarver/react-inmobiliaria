@@ -52,24 +52,23 @@ class Login extends Component {
     }
 
 
-    login = async e => {
+    login = async e =>{
         e.preventDefault();
-        const [{session},dispatch] = this.context;
-        console.log(this.context.dispatch)
-        //const [dispatch] = this.context;
-        const { firebase, user } = this.state;
+        const  [{sesion}, dispatch] = this.context;
+        const {firebase, user} = this.state;
         const {email, password} = user;
-        let callback = await iniciarSesion(dispatch, firebase, email, password)
-        if (callback.state){
-            this.props.history.push('/');
+
+        let callback = await iniciarSesion(dispatch, firebase,email, password);
+        console.log(callback);
+        if(callback.status){
+            this.props.history.push("/");
         }else{
-            openMensajePantalla(dispatch,{
+            openMensajePantalla(dispatch, {
                 open : true,
-                mensaje : callback.mensaje.message
+                mensaje: callback.mensaje.message
             })
         }
-
-
+        
     }
     
     render() {
